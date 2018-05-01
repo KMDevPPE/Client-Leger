@@ -62,7 +62,6 @@
 		</div>
 
 
-
 		<!-- PHP -->
 			<?php
 			if (isset($_GET['page'])){

@@ -1,20 +1,3 @@
-insert into materiel
-values
-	(1,null,2,null,'PONCEUSE DELTA','images/ponceuse_delta.png',35.5),
-	(2,null,1,null,'BETTONIERE','images/betonniere.jpg',49.99),
-	(3,null,2,null,'SCIE CIRCULAIRE','images/scie_circulaire.jpg',45.5),
-	(4,null,2,null,'SCIE SAUTEUSE','images/scie_sauteuse.jpg',45.5);
-
-insert into type_materiel
-values
-	(1,'Gros Oeuvre, terrassement'),
-	(2,'Perforation, sciage, ponçage'),
-	(3,'Groupe électrogène'),
-	(4,'Peinture, rénovation'),
-	(5,'Nettoyage'),
-	(6,'Élévation'),
-	(7,'Manutention'),
-	(8,'Soudure, plomberie, pompes');
 
 insert into particulier (id_C,datenaiss,nom_c,prenom_c,ville_c,cp_c,rue_c,telephone,mail,mdp)
 values
