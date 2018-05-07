@@ -7,6 +7,7 @@ values
 
 insert into entreprise
 values
+	(null,'yannis','truc','01234567891257','moualem','yannis','Paris','95100','rue de pars','0101010101','a@a','a')
 	(null,'logisur','logistique','01234567891257','didier','marc','Argenteuil','95100','rue guy moquet','0101010101','l@l.l','l');
 
 insert into etat
@@ -23,7 +24,7 @@ values
 	(2,'Argenteuil','95100','rue Guy Moquet',2017-01-01,null),
 	(3,'Colombes','92700','rue du oresident salvador allende',2017-01-01,null),
 	(4,'Nanterre','92014','rue de je sais pas',2017-01-01,null);
- 
+
 insert into type_materiel
 values
 	(1,'Gros Oeuvre'),
