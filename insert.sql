@@ -1,3 +1,6 @@
+insert into salarie(ID_S, nom_s, prenom_s, rue_s, cp_s, ville_s, mail, mdp, droits)
+values
+	(null, 'MOUALEM', 'Yannis', 'Rue de Senlis', '95260', 'Beaumont', 'admin','mo', 'admin');
 
 insert into particulier (id_C,datenaiss,nom_c,prenom_c,ville_c,cp_c,rue_c,telephone,mail,mdp)
 values
@@ -7,7 +10,7 @@ values
 
 insert into entreprise
 values
-	(null,'yannis','truc','01234567891257','moualem','yannis','Paris','95100','rue de pars','0101010101','a@a','a')
+	(null,'yannis','truc','01234567891257','moualem','yannis','Paris','95100','rue de pars','0101010101','a@a','a'),
 	(null,'logisur','logistique','01234567891257','didier','marc','Argenteuil','95100','rue guy moquet','0101010101','l@l.l','l');
 
 insert into etat
