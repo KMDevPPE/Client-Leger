@@ -92,7 +92,7 @@ create trigger delPart
         where id_C = old.id_C;
     end //
 delimiter ;
- 
+
 drop trigger if exists delEntr;
 delimiter //
 create trigger delEntr
@@ -105,7 +105,7 @@ create trigger delEntr
 delimiter ;
 
 create view infClient as
-    select * , count(id_Cont) as nbContrat , sum (prix) as total
+    select * , count(id_Cont) as nbContrat , sum (prix_m) as total
     from client c , contrat co, materiel m
-    where c.id_C = co.id_C ,
+    where c.id_C = co.id_C
     and m.id_M = co.id_M;
