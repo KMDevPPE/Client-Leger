@@ -5,28 +5,28 @@ create procedure PInsMat (nomM char(32), prix float(10,2), ville varchar(128), c
 	begin
 		declare nbL, nbE, nbT, idl, ide, idt int;
 
-		select count(*) into nbL from localisation where lieux = ville and cp = codeP and rue = larue;
+		select count(*) into nbL from localisation where lieux = ville and cp = codeP and rue_c = larue;
 
 		select count(*) into nbE from etat where nom_etat = etat;
 
 		select count(*) into nbT from type_materiel where libelle = nomType;
 
-		if nbE > 0 then 
+		if nbE > 0 then
 			select 'erreur de saisie de l\'etat ';
 		end if;
 
-		if nbT > 0 then 
+		if nbT > 0 then
 			select 'erreur de saisie du type ';
-		end if;		
+		end if;
 
-		if nbL < 1 then 
+		if nbL < 1 then
 			insert into localisation values (null,ville,codeP,larue);
 
 			select id_etat into ide from etat where nom_etat= etat;
 
 			select id_type into idt from type_materiel where libelle = nomType;
 
-			select id_localisation into idl from localisation where lieux = ville and cp = codeP and rue = larue;
+			select id_localisation into idl from localisation where lieux = ville and cp = codeP and rue_c = larue;
 
 			insert into materiel values (null,idl,idt,ide,nomM,prix,dateD,dateF);
 
@@ -37,7 +37,7 @@ create procedure PInsMat (nomM char(32), prix float(10,2), ville varchar(128), c
 
 		select id_type into idt from type_materiel where libelle = nomType;
 
-		select id_localisation into idl from localisation where lieux = ville and cp = codeP and rue = larue;
+		select id_localisation into idl from localisation where lieux = ville and cp = codeP and rue_c = larue;
 
 		insert into materiel values (null,idl,idt,ide,nomM,prix,dateD,dateF);
 
