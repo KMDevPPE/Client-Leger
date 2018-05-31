@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("fonctions-panier.php");
+include_once("modele/modele.php");
 
 $erreur = false;
 
@@ -21,7 +22,7 @@ if($action !== null)
    $p = floatval($p);
 
    //On traite $q qui peut etre un entier simple ou un tableau d'entier
-    
+
    if (is_array($q)){
       $QteArticle = array();
       $i=0;
@@ -31,7 +32,7 @@ if($action !== null)
    }
    else
    $q = intval($q);
-    
+
 }
 /*echo $action. " libelle : ".$l;*/
 echo 'Voici votre panier '.$_SESSION['mail'];
@@ -54,6 +55,10 @@ if (!$erreur){
 
       default:
          break;
+   }
+   if ($commande)
+   {
+       passerCommande($_SESSION['panier']['libelleProduit'][$i]);
    }
 }
 
@@ -103,8 +108,9 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 	      echo "</td></tr>";
 
 	      echo "<tr><td colspan=\"4\">";
-	      echo "<input type=\"submit\" value=\"Rafraichir\"/>";
+	      echo "<input type=\"submit\" name=\"action\" value=\"Rafraichir\"/>";
 	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
+          echo "<input type=\"submit\" name=\"commande\" value=\"Commander\"/>";
 
 	      echo "</td></tr>";
 	   }

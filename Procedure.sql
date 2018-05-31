@@ -45,4 +45,4 @@ create procedure PInsMat (nomM char(32), prix float(10,2), ville varchar(128), c
 delimiter ;
 
 
-call PInsMat ('truc','10.2','paris','75000','rue de paris','2018-04-01',curdate(),'nettoyage','neuf');
+-- call PInsMat ('truc','10.2','paris','75000','rue de paris','2018-04-01',curdate(),'nettoyage','neuf');

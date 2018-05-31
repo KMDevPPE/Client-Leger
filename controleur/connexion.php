@@ -4,7 +4,7 @@
 include __DIR__ . '/controleur.php';
 include ("../modele/modele.php");
 
-$unControleur = new Controleur ("localhost","PPE", "root","");
+$unControleur = new Controleur ("localhost","btprent", "root","");
 session_start();
 
 	if (isset($_POST['mail']) && isset($_POST['mdp']))

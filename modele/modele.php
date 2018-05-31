@@ -9,7 +9,7 @@
 		$this->pdo = null;
 		$this->table = "";
 
-		try 
+		try
 		{
 			$this->pdo = new PDO ("mysql:host=".$serveur.";dbname=".$bdd , $user,$mdp);
 		}
@@ -53,28 +53,28 @@
 
 			$requete = "insert into ".$this->table." values (
 				null,".$chainechamps.")";
-			
+
 			$insert = $this->pdo->prepare ($requete);
 			$insert->execute($donnees);
 		}
 	}
 
-	public function recherche($motcle)
-	{
-		if ($this->pdo != NULL)
-		{
-			$requete = "select * from eleve where nom like :motcle or prenom like :motcle;";
-			$donnees = array(":motcle"=>"%".$motcle."%");
-			$recherche = $this->pdo->prepare($requete);
-			$recherche->execute($donnees);
-			$resultats = $recherche->fetchAll();
-			return $resultats;
-		}
-		else
-		{
-			return null;
-		}
-	}
+	// public function recherche($motcle)
+	// {
+	// 	if ($this->pdo != NULL)
+	// 	{
+	// 		$requete = "select * from eleve where nom like :motcle or prenom like :motcle;";
+	// 		$donnees = array(":motcle"=>"%".$motcle."%");
+	// 		$recherche = $this->pdo->prepare($requete);
+	// 		$recherche->execute($donnees);
+	// 		$resultats = $recherche->fetchAll();
+	// 		return $resultats;
+	// 	}
+	// 	else
+	// 	{
+	// 		return null;
+	// 	}
+	// }
 
 	public function delete($tab)
 	{
@@ -101,25 +101,25 @@
 		}
 	}
 
-	public function update($tab)
-	{
-		if ($this->pdo != NULL)
-		{
-			$requete = "update eleve set nom = :nom , prenom = :prenom , age = :age where idEleve = :ideleve;";
-			$donnees = array(
-							":ideleve"=>$tab['ideleve'],
-							":nom"    =>$tab['nom'],
-							":prenom" =>$tab['prenom'],
-							":age"    =>$tab['age']
-						);
-			$update = $this->pdo->prepare($requete);
-			$update->execute($donnees);
-		}
-		else
-		{
-			return null;
-		}
-	}
+	// public function update($tab)
+	// {
+	// 	if ($this->pdo != NULL)
+	// 	{
+	// 		$requete = "update eleve set nom = :nom , prenom = :prenom , age = :age where idEleve = :ideleve;";
+	// 		$donnees = array(
+	// 						":ideleve"=>$tab['ideleve'],
+	// 						":nom"    =>$tab['nom'],
+	// 						":prenom" =>$tab['prenom'],
+	// 						":age"    =>$tab['age']
+	// 					);
+	// 		$update = $this->pdo->prepare($requete);
+	// 		$update->execute($donnees);
+	// 	}
+	// 	else
+	// 	{
+	// 		return null;
+	// 	}
+	// }
 
 	/*public function selectWhere ($id)
 	{
@@ -142,7 +142,7 @@
 	}*/
 
 	public function selectWhere ($tab)
-	{	
+	{
 		if ($this->pdo != NULL)
 		{
 				$donnees = array();
@@ -168,7 +168,7 @@
 		}
 	}
 	public function selectCount ($tab)
-	{	
+	{
 		if ($this->pdo != NULL)
 		{
 				$donnees = array();
@@ -197,13 +197,34 @@
 
 	public function verifierIdentifiants($listeInfos) {
 		if ($this->pdo != null) {
-			$requete = $this->pdo->prepare("SELECT * FROM Entreprise WHERE mail = :mail AND MDP = :mdp");
+			$requete = $this->pdo->prepare("SELECT * FROM Client WHERE mail = :mail AND MDP = :mdp");
 			try {
 				$requete->execute($listeInfos);
 			} catch (PDOException $e) {
 				echo $e;
 			}
 			return $requete->fetch();
+		}
+	}
+
+	public function insert($tab) //on recoit un tableau
+	{
+		if ($this->pdo != NULL)
+		{
+			$donnees = array();
+			$champs = array();
+			foreach ($tab as $cle => $valeur) {
+				$champs[] = ":".$cle;
+				$donnees [":".$cle] = $valeur;
+			}
+
+			$chainechamps = implode(",", $champs);
+
+			$requete = "insert into ".$this->table." values (
+				null,".$chainechamps.")";
+
+			$insert = $this->pdo->prepare ($requete);
+			$insert->execute($donnees);
 		}
 	}
 }

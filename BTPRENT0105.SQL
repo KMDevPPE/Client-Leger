@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS MATERIEL
    ID_ETAT INTEGER(2) NOT NULL  ,
    NOM_M CHAR(32) NULL  ,
    PRIX_M DECIMAL(10,2) NULL  ,
-   DATE_DEB CHAR(32) NULL  ,
-   DATE_FIN CHAR(32) NULL
+   IMAGE_M VARCHAR(200)  ,
+   STOCK_M INTEGER(2)
    , PRIMARY KEY (ID_M)
  )
  comment = "";
@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS CONTRAT
    ID_M INTEGER(2) NULL  ,
    ID_S INTEGER(2) NOT NULL  ,
    ID_C INTEGER(2) NOT NULL  ,
+   QUANTITE INTEGER(2)  , 
    DATE_DEB DATE NULL  ,
    DATE_F DATE NULL
    , PRIMARY KEY (ID_CONT)
@@ -194,6 +195,18 @@ CREATE TABLE IF NOT EXISTS AFFILIER
    , PRIMARY KEY (IDT,ID_CONT)
  )
  comment = "";
+
+ # -----------------------------------------------------------------------------
+ #       TABLE : AFFILIER
+ # -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS ENQUETE
+(
+    MAIL VARCHAR(128)  ,
+    MOYENNE DECIMAL (5,2)  ,
+    DATE_E  DATE
+)
+comment = "";
 
 
 # -----------------------------------------------------------------------------

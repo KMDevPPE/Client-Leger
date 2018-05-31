@@ -70,7 +70,7 @@
 			else {
 				$page =  0;
 			}
-			$unControleur = new Controleur ("localhost","PPE", "root","");
+			$unControleur = new Controleur ("localhost","btprent", "root","");
 			switch ($page)
 			{
 				case 0 :

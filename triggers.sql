@@ -104,8 +104,8 @@ create trigger delEntr
     end //
 delimiter ;
 
-create view infClient as
-    select * , count(id_Cont) as nbContrat , sum (prix_m) as total
-    from client c , contrat co, materiel m
-    where c.id_C = co.id_C
-    and m.id_M = co.id_M;
+-- create view infClient as
+--     select * , count(id_Cont) as nbContrat , sum (prix_m) as total
+--     from client c , contrat co, materiel m
+--     where c.id_C = co.id_C
+--     and m.id_M = co.id_M;
