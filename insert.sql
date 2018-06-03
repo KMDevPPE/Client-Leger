@@ -25,10 +25,10 @@ values
 
 insert into localisation
 values
-	(1,'Paris','75017','rue de Paris',2017-01-01,null),
-	(2,'Argenteuil','95100','rue Guy Moquet',2017-01-01,null),
-	(3,'Colombes','92700','rue du oresident salvador allende',2017-01-01,null),
-	(4,'Nanterre','92014','rue de je sais pas',2017-01-01,null);
+	(1,'Paris','75017','rue de Paris'),
+	(2,'Argenteuil','95100','rue Guy Moquet'),
+	(3,'Colombes','92700','rue du oresident salvador allende'),
+	(4,'Nanterre','92014','rue de je sais pas');
 
 insert into type_materiel
 values
@@ -41,10 +41,14 @@ values
 	(7,'Plomberie');
 
 insert into MATERIEL
-values (null,1,1,1,'betonniere',49.99,null,null,'/images/betoniere.jpg'),
-		(null,1,2,1,'ponceuse delta',49.99,null,null,'/images/ponceuse_delta.jpg'),
-		(null,1,2,1,'scie sauteuse',49.99,null,null,'/images/scie_sauteuse.jpg'),
-		(null,1,2,1,'scie circulaire',49.99,null,null,'/images/scie_circulaire.jpg');
+values (null,1,1,1,'betonniere',49.99,'images/betoniere.jpg',5),
+		(null,1,2,1,'ponceuse delta',49.99,'images/ponceuse_delta.jpg',0),
+		(null,1,2,1,'scie sauteuse',49.99,'images/scie_sauteuse.jpg',120),
+		(null,1,2,1,'scie circulaire',49.99,'images/scie_circulaire.jpg',30);
+
+
+-- call pInsCont ('e@e.e','scie sauteuse','images/scie_sauteuse.jpg',49.99,'2018-06-07',10);
+
 
 update particulier
 set prenom_C = 'Yannis'

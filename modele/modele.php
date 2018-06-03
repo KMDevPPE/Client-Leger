@@ -207,24 +207,15 @@
 		}
 	}
 
-	public function insert($tab) //on recoit un tableau
+	public function insertCont($tab)
 	{
 		if ($this->pdo != NULL)
 		{
-			$donnees = array();
-			$champs = array();
-			foreach ($tab as $cle => $valeur) {
-				$champs[] = ":".$cle;
-				$donnees [":".$cle] = $valeur;
-			}
-
-			$chainechamps = implode(",", $champs);
-
-			$requete = "insert into ".$this->table." values (
-				null,".$chainechamps.")";
-
-			$insert = $this->pdo->prepare ($requete);
-			$insert->execute($donnees);
+			$chaine = implode("','",$tab);
+			$requete = "call pInsCont ('".$chaine."');";
+			$insertCont = $this->pdo->prepare ($requete);
+			$insertCont->execute($tab);
+			echo $requete;
 		}
 	}
 }

@@ -104,6 +104,17 @@ create trigger delEntr
     end //
 delimiter ;
 
+drop trigger if exists insCont;
+delimiter //
+create trigger insCont
+    after insert on CONTRAT
+    for each row
+    begin
+    update MATERIEL
+        set STOCK_M = STOCK_M - new.QUANTITE;
+    end //
+delimiter ;
+
 -- create view infClient as
 --     select * , count(id_Cont) as nbContrat , sum (prix_m) as total
 --     from client c , contrat co, materiel m

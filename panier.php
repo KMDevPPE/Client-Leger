@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("fonctions-panier.php");
+include_once("controleur/controleur.php");
 include_once("modele/modele.php");
 
 $erreur = false;
@@ -56,9 +57,16 @@ if (!$erreur){
       default:
          break;
    }
-   if ($commande)
+   if (isset($_POST['commande']))
    {
-       passerCommande($_SESSION['panier']['libelleProduit'][$i]);
+       $unControleur = new Controleur ("localhost","btprent", "root","");
+       $nbArticles=count($_SESSION['panier']['libelleProduit']);
+       for ($i=0 ; $i < $nbArticles ; $i++)
+       {
+           // $tab = "'".$_SESSION['mail']."','".$_SESSION['panier']['libelleProduit'][$i]."','".$_SESSION['panier']['prixProduit'][$i]."','".$_SESSION['panier']['qteProduit'][$i]."'";
+           $tab = array($_SESSION['mail'],$_SESSION['panier']['libelleProduit'][$i],$_SESSION['panier']['prixProduit'][$i],$_SESSION['panier']['qteProduit'][$i]);
+           $unControleur->insertCont($tab);
+       }
    }
 }
 

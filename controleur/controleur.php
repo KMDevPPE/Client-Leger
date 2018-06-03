@@ -1,6 +1,6 @@
 <?php
 
-	class Controleur 
+	class Controleur
 	{
 		private $unModele ;
 		public function __construct ($serveur,$bdd,$user,$mdp)
@@ -37,6 +37,10 @@
 			return $this->unModele->verifierIdentifiants($listeInfos);
 		}
 
+		public function insertCont($tab)
+		{
+			return $this->unModele->insertCont($tab);
+		}
 	}
 
 ?>
