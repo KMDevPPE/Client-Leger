@@ -1,6 +1,7 @@
+
 drop procedure if exists PInsMat;
 delimiter //
-create procedure PInsMat (nomM char(32), prix float(10.2), ville varchar(128), codeP char(5), larue varchar (128),stock int(2),img varchar(128), nomType char(32), etat char(32))
+create procedure PInsMat (nomM char(32), prix float(10,2), ville varchar(128), codeP char(5), larue varchar (128), imageM varchar (100), stockM int (2), nomType char(32), etat char(32))
 
 	begin
 		declare nbL, nbE, nbT, idl, ide, idt int;
@@ -28,10 +29,9 @@ create procedure PInsMat (nomM char(32), prix float(10.2), ville varchar(128), c
 
 			select id_localisation into idl from localisation where lieux = ville and cp = codeP and rue_c = larue;
 
-			insert into materiel values (null,idl,idt,ide,nomM,prix,img,stock);
+			insert into materiel values (null,idl,idt,ide,nomM,prix,imageM,stockM);
 
-		end if;
-
+		else
 
 		select id_etat into ide from etat where nom_etat= etat;
 
@@ -39,27 +39,14 @@ create procedure PInsMat (nomM char(32), prix float(10.2), ville varchar(128), c
 
 		select id_localisation into idl from localisation where lieux = ville and cp = codeP and rue_c = larue;
 
+		insert into materiel values (null,idl,idt,ide,nomM,prix,imageM,stockM);
+
+	end if;
 		insert into materiel values (null,idl,idt,ide,nomM,prix,img,stock);
 
 	end //
 delimiter ;
 
 
--- call PInsMat ('truc','10.2','truc','75000','truc',10,'images/truc.jpg','nettoyage','neuf');
-
-
-drop procedure if exists pInsCont ;
-delimiter //
-create procedure pInsCont ( mailC varchar(128), nomM char(32),  prix decimal(10,2), qtt int(2))
-	begin
-	 	declare idc, idm int(2);
-
-		select ID_M into idm from MATERIEL where NOM_M = nomM and PRIX_M = prix;
-		select ID_C into idc from CLIENT where MAIL = mailC;
-
-		insert into contrat values (null,idm,null,idc,qtt,now(),null);
-	end //
-delimiter ;
-
--- call pInsCont ('e@e.e','truc',10.2,'2018-06-09',5);
--- insert into contrat values (null,1,null,0,20,curdate(),curdate());
+-- call PInsMat ('manitou','20.90','Beaumont','95260','rue de senlis','/images/manitou.jpg',10,'manutention','bon etat');
+-- call PInsMat ('grue','29.99','Chambly','60000','rue des champs','/images/grue.jpg',10,'manutention','bon etat');
