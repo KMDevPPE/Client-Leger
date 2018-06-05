@@ -25,10 +25,10 @@ values
 
 insert into localisation
 values
-	(1,'Paris','75017','rue de Paris',2017-01-01,null),
-	(2,'Argenteuil','95100','rue Guy Moquet',2017-01-01,null),
-	(3,'Colombes','92700','rue du oresident salvador allende',2017-01-01,null),
-	(4,'Nanterre','92014','rue de je sais pas',2017-01-01,null);
+	(1,'Paris','75017','rue de Paris'),
+	(2,'Argenteuil','95100','rue Guy Moquet'),
+	(3,'Colombes','92700','rue du oresident salvador allende'),
+	(4,'Nanterre','92014','rue de je sais pas');
 
 insert into type_materiel
 values
