@@ -133,8 +133,13 @@
 					if (isset($_POST['valider']))
 					{
 						$tab = array("raison"=>$_POST['raison'],
-							"representant"=>$_POST['representant'],
-							"adresse"=>$_POST['adresse'],
+							"domaine"=>$_POST['domaine'],
+							"siret"=>$_POST['siret'],
+							"nom_c"=>$_POST['nom'],
+							"prenom_c"=>$_POST['prenom'],
+							"ville_c"=>$_POST['ville'],
+							"cp_c"=>$_POST['cp'],
+							"rue_c"=>$_POST['rue'],
 							"telephone"=>$_POST['telephone'],
 							"mail"=>$_POST['mail'],
 							"mdp"=>$_POST['mdp']
