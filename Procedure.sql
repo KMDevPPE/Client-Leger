@@ -12,11 +12,9 @@ create procedure PInsMat (nomM char(32), prix float(10,2), ville varchar(128), c
 
 		select count(*) into nbT from type_materiel where libelle = nomType;
 
-		if nbE > 0 then
 			select 'erreur de saisie de l\'etat ';
 		end if;
 
-		if nbT > 0 then
 			select 'erreur de saisie du type ';
 		end if;
 
