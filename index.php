@@ -52,7 +52,7 @@
 								<li><a href="index.php?page=4">Electricité</a></li>
 								<li><a href="index.php?page=5">Rénovation</a></li>
 								<li><a href="index.php?page=6">Nettoyage</a></li>
-								<li><a href="index.php?page=7">Elevetion</a></li>
+								<li><a href="index.php?page=7">Elévation</a></li>
 								<li><a href="index.php?page=8">Manutention</a></li>
 								<li><a href="index.php?page=9">Plomberie</a></li>
 							</ul>
