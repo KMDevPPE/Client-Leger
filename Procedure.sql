@@ -12,11 +12,11 @@ create procedure PInsMat (nomM char(32), prix float(10,2), ville varchar(128), c
 
 		select count(*) into nbT from type_materiel where libelle = nomType;
 
-		if nbE > 0 then
+		if nbE < 0 then
 			select 'erreur de saisie de l\'etat ';
 		end if;
 
-		if nbT > 0 then
+		if nbT < 0 then
 			select 'erreur de saisie du type ';
 		end if;
 
@@ -49,4 +49,4 @@ delimiter ;
 
 -- call PInsMat ('manitou','20.90','Beaumont','95260','rue de senlis','/images/manitou.jpg',10,'manutention','bon etat');
 -- call PInsMat ('grue','29.99','Chambly','60000','rue des champs','/images/grue.jpg',10,'manutention','bon etat');
-
+-- call PInsMat ('tronconnneuse','29.99','Persan','95340','rue du prés','/images/tronc.jpg',10,'manutention','bon etat');
