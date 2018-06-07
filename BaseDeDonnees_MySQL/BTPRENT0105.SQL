@@ -189,14 +189,6 @@ CREATE TABLE IF NOT EXISTS INTERVENIR
 #       TABLE : AFFILIER
 # -----------------------------------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS AFFILIER
- (
-   IDT CHAR(32) NOT NULL  ,
-   ID_CONT INTEGER(2) NOT NULL
-   , PRIMARY KEY (IDT,ID_CONT)
- )
- comment = "";
-
  # -----------------------------------------------------------------------------
  #       TABLE : AFFILIER
  # -----------------------------------------------------------------------------
@@ -263,13 +255,3 @@ ALTER TABLE INTERVENIR
 ALTER TABLE INTERVENIR
   ADD FOREIGN KEY FK_INTERVENIR_MATERIEL (ID_M)
       REFERENCES MATERIEL (ID_M) ;
-
-
-ALTER TABLE AFFILIER
-  ADD FOREIGN KEY FK_AFFILIER_TECHNICIEN (IDT)
-      REFERENCES TECHNICIEN (IDT) ;
-
-
-ALTER TABLE AFFILIER
-  ADD FOREIGN KEY FK_AFFILIER_CONTRAT (ID_CONT)
-      REFERENCES CONTRAT (ID_CONT) ;

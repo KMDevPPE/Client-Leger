@@ -1,11 +1,11 @@
 drop trigger if exists hPart;
 delimiter //
 create trigger hPart
-    before insert on Particulier
+    before insert on PARTICULIER
     for each row
     begin
     declare nb int (2) ;
-    select Max(id_C) into nb from Client;
+    select Max(id_C) into nb from CLIENT;
 
     if nb is null
         then
@@ -15,7 +15,7 @@ create trigger hPart
     end if ;
             set new.id_C = nb ;
 
-            insert into client
+            insert into CLIENT
             values (new.id_C, new.nom_C, new.prenom_C, new.ville_C, new.cp_C, new.rue_C, new.telephone,new.mail, new.mdp);
 
     end //
@@ -24,11 +24,11 @@ delimiter ;
 drop trigger if exists hEntr;
 delimiter //
 create trigger hEntr
-    before insert on Entreprise
+    before insert on ENTREPRISE
     for each row
     begin
     declare nb int (2) ;
-    select Max(id_C) into nb from Client;
+    select Max(id_C) into nb from CLIENT;
 
     if nb is null
         then
@@ -38,7 +38,7 @@ create trigger hEntr
     end if ;
             set new.id_C = nb ;
 
-            insert into client
+            insert into CLIENT
             values (new.id_C, new.nom_C, new.prenom_C, new.ville_C, new.cp_C, new.rue_C, new.telephone,new.mail, new.mdp);
 
     end //
@@ -47,10 +47,10 @@ delimiter ;
 drop trigger if exists upPart;
 delimiter //
 create trigger upPart
-    before update on Particulier
+    before update on PARTICULIER
     for each row
     begin
-        update client
+        update CLIENT
         set nom_C = new.nom_C ,
             prenom_C = new.prenom_C ,
             ville_C = new.ville_C,
@@ -66,10 +66,10 @@ delimiter ;
 drop trigger if exists upEntr;
 delimiter //
 create trigger upEntr
-    before update on Entreprise
+    before update on ENTREPRISE
     for each row
     begin
-        update client
+        update CLIENT
         set nom_C = new.nom_C ,
             prenom_C = new.prenom_C ,
             ville_C = new.ville_C,
@@ -96,10 +96,10 @@ delimiter ;
 drop trigger if exists delEntr;
 delimiter //
 create trigger delEntr
-    after delete on Entreprise
+    after delete on ENTREPRISE
     for each row
     begin
-        delete from Client
+        delete from CLIENT
         where id_C = old.id_C;
     end //
 delimiter ;
