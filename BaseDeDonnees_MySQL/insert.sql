@@ -1,19 +1,4 @@
-insert into salarie(ID_S, nom_s, prenom_s, rue_s, cp_s, ville_s, mail, mdp, droits)
-values
-	(null, 'MOUALEM', 'Yannis', 'Rue de Senlis', '95260', 'Beaumont', 'admin','mo', 'admin'),
-	(null,"admin","admin","rue de l'admin","00000","ville de l'admin","admin","123","admin"),
-	(null,"util","util","rue de l'util","00000","ville de l'util","util","456","util");
-
-insert into particulier (id_C,datenaiss,nom_c,prenom_c,ville_c,cp_c,rue_c,telephone,mail,mdp)
-values
-	(null,'1999-01-21','didier','marc','paris','75007','rue de paris','0606060606','q@q.q','q'),
-	(null,curdate(),'moualem','yannis','paris','75003','rue du 3eme','0707070707','y@y.y','y'),
-	(null,curdate(),'kamoun','elies','paris','75008','rue par la','0909090909','e@e.e','e');
-
-insert into entreprise
-values
-	(null,'yannis','truc','01234567891257','moualem','yannis','Paris','95100','rue de pars','0101010101','a@a','a'),
-	(null,'logisur','logistique','01234567891257','didier','marc','Argenteuil','95100','rue guy moquet','0101010101','l@l.l','l');
+--INSERT ESSENTIELS A LA BDD POUR LE FONCTIONNEMENT DES APPS
 
 insert into etat
 values
@@ -39,6 +24,27 @@ values
 	(5,'Elevation'),
 	(6,'Manutention'),
 	(7,'Plomberie');
+
+insert into salarie(ID_S, nom_s, prenom_s, rue_s, cp_s, ville_s, mail, mdp, droits)
+values
+	(null, 'MOUALEM', 'Yannis', 'Rue de Senlis', '95260', 'Beaumont', 'admin','mo', 'admin'),
+	(null,"admin","admin","rue de l'admin","00000","ville de l'admin","admin","123","admin"),
+	(null,"util","util","rue de l'util","00000","ville de l'util","util","456","util");
+	
+	
+-- INSERT DE TEST
+
+insert into particulier (id_C,datenaiss,nom_c,prenom_c,ville_c,cp_c,rue_c,telephone,mail,mdp)
+values
+	(null,'1999-01-21','didier','marc','paris','75007','rue de paris','0606060606','q@q.q','q'),
+	(null,curdate(),'moualem','yannis','paris','75003','rue du 3eme','0707070707','y@y.y','y'),
+	(null,curdate(),'kamoun','elies','paris','75008','rue par la','0909090909','e@e.e','e');
+
+insert into entreprise
+values
+	(null,'yannis','truc','01234567891257','moualem','yannis','Paris','95100','rue de pars','0101010101','a@a','a'),
+	(null,'logisur','logistique','01234567891257','didier','marc','Argenteuil','95100','rue guy moquet','0101010101','l@l.l','l');
+
 
 insert into MATERIEL
 values (null,1,1,1,'betonniere',49.99,'images/betoniere.jpg',5),

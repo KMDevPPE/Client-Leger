@@ -13,6 +13,7 @@
 	<head>
 		<title>BTPRent </title>
 		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="images/icone.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -41,7 +42,7 @@
 
 
 					<!-- Logo -->
-						<h1><a href="index.html" id="logo" > BTPRent </a></h1>
+						<h1><a href="index.php" id="logo"> BTPRent </a></h1>  
 
 					<!-- Nav -->
 						<nav id="nav">
