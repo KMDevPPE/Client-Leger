@@ -54,6 +54,8 @@
 			$requete = "insert into ".$this->table." values (
 				null,".$chainechamps.")";
 
+				echo "test".$requete;
+
 			$insert = $this->pdo->prepare ($requete);
 			$insert->execute($donnees);
 		}

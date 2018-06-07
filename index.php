@@ -42,7 +42,7 @@
 
 
 					<!-- Logo -->
-						<h1><a href="index.php" id="logo"> BTPRent </a></h1>  
+						<h1><a href="index.php" id="logo"> BTPRent </a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -71,7 +71,7 @@
 			else {
 				$page =  0;
 			}
-			$unControleur = new Controleur ("localhost","btprent", "root","");
+			$unControleur = new Controleur ("localhost","BTPRent", "root","");
 			switch ($page)
 			{
 				case 0 :
@@ -81,76 +81,76 @@
 					include ("vue/vueAccueil.php");
 					break;
 				case 2 :
-					$unControleur->setTable("materiel");
+					$unControleur->setTable("MATERIEL");
 					$tab = array("ID_TYPE"=>1);
 					$resultats = $unControleur->selectWhere($tab);
 					include ("vue/vue_materielperf.php");
 					break;
 				case 3 :
-					$unControleur->setTable("materiel");
+					$unControleur->setTable("MATERIEL");
 					$tab = array("ID_TYPE"=>2);
 					$resultats = $unControleur->selectWhere($tab);
 					include ("vue/vue_materielperf.php");
 					break;
 				case 4 :
-					$unControleur->setTable("materiel");
+					$unControleur->setTable("MATERIEL");
 					$tab = array("ID_TYPE"=>3);
 					$resultats = $unControleur->selectWhere($tab);
 					include ("vue/vue_materielperf.php");
 					break;
 				case 5 :
-					$unControleur->setTable("materiel");
+					$unControleur->setTable("MATERIEL");
 					$tab = array("ID_TYPE"=>4);
 					$resultats = $unControleur->selectWhere($tab);
 					include ("vue/vue_materielperf.php");
 					break;
 				case 6 :
-					$unControleur->setTable("materiel");
+					$unControleur->setTable("MATERIEL");
 					$tab = array("ID_TYPE"=>5);
 					$resultats = $unControleur->selectWhere($tab);
 					include ("vue/vue_materielperf.php");
 					break;
 				case 7 :
-					$unControleur->setTable("materiel");
+					$unControleur->setTable("MATERIEL");
 					$tab = array("ID_TYPE"=>6);
 					$resultats = $unControleur->selectWhere($tab);
 					include ("vue/vue_materielperf.php");
 					break;
 				case 8 :
-					$unControleur->setTable("materiel");
+					$unControleur->setTable("MATERIEL");
 					$tab = array("ID_TYPE"=>7);
 					$resultats = $unControleur->selectWhere($tab);
 					include ("vue/vue_materielperf.php");
 					break;
 				case 9 :
-					$unControleur->setTable("materiel");
+					$unControleur->setTable("MATERIEL");
 					$tab = array("ID_TYPE"=>8);
 					$resultats = $unControleur->selectWhere($tab);
 					include ("vue/vue_materielperf.php");
 					break;
 				case 10 :
-					$unControleur->setTable("Entreprise");
+					$unControleur->setTable("ENTREPRISE");
 					include ("vue/vueInsertPro.php");
 					if (isset($_POST['valider']))
 					{
 						$tab = array("raison"=>$_POST['raison'],
-							"domaine"=>$_POST['domaine'],
-							"siret"=>$_POST['siret'],
-							"nom_c"=>$_POST['nom'],
-							"prenom_c"=>$_POST['prenom'],
-							"ville_c"=>$_POST['ville'],
-							"cp_c"=>$_POST['cp'],
-							"rue_c"=>$_POST['rue'],
-							"telephone"=>$_POST['telephone'],
-							"mail"=>$_POST['mail'],
-							"mdp"=>$_POST['mdp']
+							"DOMAINE"=>$_POST['domaine'],
+							"SIRET"=>$_POST['siret'],
+							"NOM_C"=>$_POST['nom'],
+							"PRENOM_C"=>$_POST['prenom'],
+							"VILLE_C"=>$_POST['ville'],
+							"CP_C"=>$_POST['cp'],
+							"RUE_C"=>$_POST['rue'],
+							"TELEPHONE"=>$_POST['telephone'],
+							"MAIL"=>$_POST['mail'],
+							"MDP"=>$_POST['mdp']
 						);
-						$unControleur->setTable("entreprise");
+						$unControleur->setTable("ENTREPRISE");
 						$unControleur->insert($tab);
 					}
 					break;
 				case 11 :
-					$unControleur->setTable("particulier");
+					$unControleur->setTable("PARTICULIER");
 					include ("vue/vueInsertPart.php");
 					if (isset($_POST['valider']))
 					{
@@ -165,7 +165,7 @@
 							"mail"=>$_POST['mail'],
 							"mdp"=>$_POST['mdp']
 						);
-						$unControleur->setTable("particulier");
+						$unControleur->setTable("PARTICULIER");
 						$unControleur->insert($tab);
 					}
 					break;
