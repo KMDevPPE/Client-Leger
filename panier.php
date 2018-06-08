@@ -59,7 +59,7 @@ if (!$erreur){
    }
    if (isset($_POST['commande']))
    {
-       $unControleur = new Controleur ("localhost","btprent", "root","");
+       $unControleur = new Controleur ("localhost","BTPRent", "marc","marc");
        $nbArticles=count($_SESSION['panier']['libelleProduit']);
        for ($i=0 ; $i < $nbArticles ; $i++)
        {
