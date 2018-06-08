@@ -50,7 +50,13 @@ insert into MATERIEL
 values (null,1,1,1,'betonniere',49.99,'images/betoniere.jpg',5),
 		(null,1,2,1,'ponceuse delta',49.99,'images/ponceuse_delta.jpg',0),
 		(null,1,2,1,'scie sauteuse',49.99,'images/scie_sauteuse.jpg',120),
-		(null,1,2,1,'scie circulaire',49.99,'images/scie_circulaire.jpg',30);
+		(null,1,2,1,'scie circulaire',49.99,'images/scie_circulaire.jpg',30),
+		(null,1,1,1,'grue mobile',199.99,'images/grueMobile.jpg',5),
+		(null,1,3,1,'groupe electrogene',99.99,'images/groupeElectrogene',5),
+		(null,1,6,1,'echafaudage',49.99,'images/echafaudage.jpg',5),
+		(null,1,5,1,'chariot de nettoyage',19.99,'images/chariotDeNettoyage.jpg',10),
+		(null,1,3,1,'gerbeur electrique',29.99,'images/gerbeurElectrique.jpg',5),
+		(null,1,8,1,'motopompe haute pression',49.99,'images/motopompeHautePression.jpg',7);
 
 
 -- call pInsCont ('e@e.e','scie sauteuse','images/scie_sauteuse.jpg',49.99,'2018-06-07',10);

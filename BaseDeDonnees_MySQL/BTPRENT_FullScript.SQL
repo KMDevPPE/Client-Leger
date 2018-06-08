@@ -256,7 +256,7 @@ ALTER TABLE INTERVENIR
 
 
 
-insert into etat
+insert into ETAT
 values
 	(1,'neuf'),
 	(2,'tres bon etat'),
@@ -264,7 +264,7 @@ values
 	(4,'mauvais etat'),
 	(5,'defectueux');
 
-insert into type_materiel
+insert into TYPE_MATERIEL
 values
 	(1,'Gros Oeuvre'),
 	(2,'Poncage'),
@@ -275,16 +275,28 @@ values
 	(7,'Manutention'),
 	(8,'Plomberie');
 
-insert into localisation
+insert into LOCALISATION
 values
 	(1,'Paris','75017','rue de Paris'),
 	(2,'Argenteuil','95100','rue Guy Moquet'),
 	(3,'Colombes','92700','rue du oresident salvador allende'),
 	(4,'Nanterre','92014','rue de je sais pas');
 
-insert into salarie(ID_S, nom_s, prenom_s, rue_s, cp_s, ville_s, mail, mdp, droits)
+insert into SALARIE(ID_S, nom_s, prenom_s, rue_s, cp_s, ville_s, mail, mdp, droits)
 values
 	(null, 'MOUALEM', 'Yannis', 'Rue de Senlis', '95260', 'Beaumont', 'admin','123', 'admin');
+
+insert into MATERIEL
+values (null,1,1,1,'betonniere',49.99,'images/betoniere.jpg',5),
+		(null,1,2,1,'ponceuse delta',49.99,'images/ponceuse_delta.jpg',0),
+		(null,1,2,1,'scie sauteuse',49.99,'images/scie_sauteuse.jpg',120),
+		(null,1,2,1,'scie circulaire',49.99,'images/scie_circulaire.jpg',30),
+		(null,1,1,1,'grue mobile',199.99,'images/grueMobile.jpg',5),
+		(null,1,3,1,'groupe electrogene',99.99,'images/groupeElectrogene',5),
+		(null,1,6,1,'echafaudage',49.99,'images/echafaudage.jpg',5),
+		(null,1,5,1,'chariot de nettoyage',19.99,'images/chariotDeNettoyage.jpg',10),
+		(null,1,3,1,'gerbeur electrique',29.99,'images/gerbeurElectrique.jpg',5),
+		(null,1,8,1,'motopompe haute pression',49.99,'images/motopompeHautePression.jpg',7);
 
 
 	/* TRIGGERS GERANT L'HERITAGE ENTRE CLIENT et les tables ENTREPRISE et PARTICULIER */
@@ -375,7 +387,7 @@ delimiter ;
 drop trigger if exists delPart;
 delimiter //
 create trigger delPart
-    after delete on Particulier
+    after delete on PARTICULIER
     for each row
     begin
         delete from Client

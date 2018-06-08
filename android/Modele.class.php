@@ -39,5 +39,15 @@
             $resultats = $select->fetchAll();
             return $resultats;
         }
+
+        public static function selectAllReponses ($email)
+        {
+            Modele::connexion();
+            $requete="select * from Enquete;";
+            $select = Modele::$pdo->prepare($requete);
+            $select -> execute();
+            $resultats = $select->fetchAll();
+            return $resultats;
+        }
     }
  ?>

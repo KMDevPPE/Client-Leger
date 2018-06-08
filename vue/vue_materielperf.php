@@ -1,4 +1,4 @@
-<h2> Materiel de perforation</h2>
+<h2> Materiel</h2>
 <br/>
 <table border = "1">
 	<tr>
