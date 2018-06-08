@@ -429,7 +429,7 @@ create procedure PInsMat (nomM char(32), prix float(10,2), ville varchar(128), c
 		end if;
 
 		if nbL < 1 then
-			insert into localisation values (null,ville,codeP,larue);
+			insert into LOCALISATION values (null,ville,codeP,larue);
 
 			select id_etat into ide from ETAT where nom_etat= etat;
 
