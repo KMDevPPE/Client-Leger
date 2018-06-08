@@ -5,7 +5,7 @@
         public static function connexion()
         {
             try {
-                Modele::$pdo = new PDO("mysql:host=localhost;dbname=btprent","root","");
+                Modele::$pdo = new PDO("mysql:host=localhost;dbname=BTPRent","marc","marc");
             } catch (Exeption $exp) {
                 echo "Erreur de connexion a la bdd";
             }
@@ -13,7 +13,7 @@
         public static function verifConnexion($mail,$mdp)
         {
             Modele::connexion();
-            $requete="select count(*) as nb, NOM_C, PRENOM_C from client where mail=:mail and mdp=:mdp group by mail;";
+            $requete="select count(*) as nb, NOM_C, PRENOM_C from CLIENT where mail=:mail and mdp=:mdp group by mail;";
             $donnees = array(':mail' => $mail,':mdp'=>$mdp );
             $select = Modele::$pdo->prepare($requete);
             $select -> execute($donnees);
@@ -23,7 +23,7 @@
         public static function insertReponse($mail,$moyenne)
         {
             Modele::connexion();
-            $requete="insert into enquete values (:mail, :moyenne, curdate());";
+            $requete="insert into ENQUETE values (:mail, :moyenne, curdate());";
             $donnees = array(':mail' => $mail,':moyenne'=>$moyenne );
             $select = Modele::$pdo->prepare($requete);
             $select -> execute($donnees);
