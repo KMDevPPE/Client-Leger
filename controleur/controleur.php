@@ -41,6 +41,11 @@
 		{
 			return $this->unModele->insertCont($tab);
 		}
+		
+		public function Historique () /* Ajout E4 */
+		{
+			return $this->unModele->Historique();
+		}
 	}
 
 ?>

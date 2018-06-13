@@ -56,6 +56,7 @@
 								<li><a href="index.php?page=7">Elévation</a></li>
 								<li><a href="index.php?page=8">Manutention</a></li>
 								<li><a href="index.php?page=9">Plomberie</a></li>
+								<li><a href="index.php?page=12">Historique Locations</a></li>
 							</ul>
 						</nav>
 
@@ -168,6 +169,12 @@
 						$unControleur->setTable("PARTICULIER");
 						$unControleur->insert($tab);
 					}
+					case 12 :
+					$unControleur->setTable("Historique");					
+					$resultats = $unControleur->Historique();
+					include ("vue/vue_Historique.php");
+					break;
+					
 					break;
 			}
 			?>

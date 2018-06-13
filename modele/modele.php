@@ -220,5 +220,27 @@
 			echo $requete;
 		}
 	}
+	
+	public function Historique()  /* AJOUT E4 SELECT CONTRAT DEPUIS LA BDD */
+	{
+		if ($this->pdo != NULL)
+		{
+			$requete = "SELECT * FROM HISTORIQUE ";
+			$select = $this->pdo->prepare ($requete);
+			$select -> execute ();
+			$resultats = $select->fetchAll();
+			return $resultats ;
+		}else {
+			return null ;
+		}
+	}
+	
+	/* MA VUE Historique
+	CREATE VIEW HISTORIQUE AS
+	SELECT cl.NOM_C, m.NOM_M, cl.ID_C, co.ID_CONT
+						FROM Contrat co
+						LEFT JOIN CLIENT cl ON cl.ID_C = co.ID_C
+						LEFT JOIN MATERIEL m ON m.ID_M = co.ID_M ; */
+	
 }
 ?>
